@@ -6,32 +6,22 @@ on:
       - main
 
 jobs:
-
-  jobs-extract:
+  extract:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+      - run: python e.py
 
-      - name: Run extract script
-        run: python e.py
-
-  jobs-transform:
+  transform:
     needs: extract
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+      - run: python t.py
 
-      - name: Run transform script
-        run: python t.py
-
-  jobs-load:
-    needs: transfrom
+  load:
+    needs: transform
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Run load script
-        run: python l.py
+      - uses: actions/checkout@v4
+      - run: python l.py
