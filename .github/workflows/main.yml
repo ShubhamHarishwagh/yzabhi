@@ -27,7 +27,7 @@ jobs:
         run: python t.py
 
   jobs-load:
-  needs: transfrom
+    needs: transfrom
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
