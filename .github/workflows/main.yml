@@ -17,7 +17,7 @@ jobs:
            - name: e.py 
              run: python e.py
 
-jobs:
+
     jobs-transfrom: 
         
            runs-on: ubuntu-latest 
@@ -29,7 +29,6 @@ jobs:
            - name: t.py 
              run: python t.py
 
-jobs:
     jobs-load: 
         
            runs-on: ubuntu-latest 
