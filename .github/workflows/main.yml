@@ -17,6 +17,7 @@ jobs:
         run: python e.py
 
   jobs-transform:
+    needs: extract
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -26,6 +27,7 @@ jobs:
         run: python t.py
 
   jobs-load:
+  needs: transfrom
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
